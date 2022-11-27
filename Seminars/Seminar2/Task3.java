@@ -3,11 +3,10 @@ package Seminars.Seminar2;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class Task1 {
-
+public class Task3 {
     public static void main(String[] args) throws Exception {
-        String templateQuery = "select * from students where ";
-        String fileName = "Seminars\\Seminar2\\Task1.json";
+        String templateQuery = "Студент ";
+        String fileName = "Seminars\\Seminar2\\Task3.json";
         String content = Files.lines(Paths.get(fileName)).reduce("", String::concat).replaceAll("[\"\\s{]", "")
                 .replaceAll("},", "!")
                 .replaceAll("}", "");
@@ -22,19 +21,19 @@ public class Task1 {
     public static String parseLines(String filter) {
         String[] criteries = filter.substring(0, filter.length()).split(",");
         StringBuilder where = new StringBuilder();
-        boolean flag = true;
         for (String criterion : criteries) {
             String[] keyValue = criterion.split(":");
-            if (!keyValue[1].equals("null")) {
-                if (flag) {
-                    flag = false;
-                } else {
-                    where.append(" and ");
-                }
-                where.append(keyValue[0].substring(0, keyValue[0].length()));
-                where.append(" = '");
+            if (keyValue[0].equals("фамилия")) {
                 where.append(keyValue[1].substring(0, keyValue[1].length()));
-                where.append("'");
+                where.append(" получил ");
+            }
+            if (keyValue[0].equals("оценка")) {
+                where.append("оценку ");
+                where.append(keyValue[1].substring(0, keyValue[1].length()));
+            }
+            if (keyValue[0].equals("предмет")) {
+                where.append(" по предмету ");
+                where.append(keyValue[1].substring(0, keyValue[1].length()));
             }
         }
         return where.toString();
