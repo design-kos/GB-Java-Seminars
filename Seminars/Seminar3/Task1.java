@@ -3,6 +3,8 @@ package Seminars.Seminar3;
 import java.util.Random;
 import java.util.Scanner;
 
+// Реализовать алгоритм сортировки слиянием
+
 public class Task1 {
     public static void main(String[] args) {
         System.out.println("Укажите размер массива: ");
