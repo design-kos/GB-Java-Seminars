@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+// Пусть дан произвольный список целых чисел. Удалить из него чётные числа.
+
 public class Task2 {
     public static void main(String[] args) {
         System.out.println("Укажите размер массива: ");
@@ -24,6 +26,7 @@ public class Task2 {
         for (int i = 0; i < array.size(); i++) {
             System.out.print(array.get(i) + " ");
         }
+
         System.out.println("");
     }
 
@@ -45,6 +48,7 @@ public class Task2 {
                 i--;
             }
         }
+
         return array;
     }
 }
