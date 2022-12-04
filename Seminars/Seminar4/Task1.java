@@ -5,6 +5,8 @@ import java.util.LinkedList;
 import java.util.Random;
 import java.util.Scanner;
 
+// Пусть дан LinkedList с несколькими элементами. Реализуйте метод, который вернет “перевернутый” список.
+
 public class Task1 {
     public static void main(String[] args) {
         System.out.println("Укажите размер массива: ");
